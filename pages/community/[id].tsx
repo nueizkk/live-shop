@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Layout from "../../components/layout";
+import Layout from "@components/layout";
 import Button from "@components/button";
 import TextArea from "@components/textarea";
 

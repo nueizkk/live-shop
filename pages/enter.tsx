@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/button";
+import Button from "@components/button";
 import Input from "@components/input";
 
 function cls(...classnames: string[]) {
@@ -16,7 +16,7 @@ export default function Enter() {
       <div className="mt-16">
         <div className="flex flex-col items-center">
           <h5 className="text-sm font-medium text-gray-500">Enter using:</h5>
-          <div className="grid w-full grid-cols-2 gap-16 mt-8 border-b">
+          <div className="grid w-full grid-cols-2  mt-8 border-b">
             <button
               onClick={onEmailClick}
               className={cls(

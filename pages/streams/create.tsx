@@ -1,7 +1,7 @@
-import Layout from "../../components/layout";
-import Button from "../../components/button";
-import TextArea from "../../components/textarea";
-import Input from "../../components/input";
+import Layout from "@components/layout";
+import Button from "@components/button";
+import TextArea from "@components/textarea";
+import Input from "@components/input";
 
 export default function Create() {
   return (

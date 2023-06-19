@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Layout from "../../components/layout";
+import Layout from "@components/layout";
 import { useRouter } from "next/router";
 
 const Profile: NextPage = () => {

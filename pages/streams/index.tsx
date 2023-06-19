@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 export default function Stream() {
   return (
     <Layout title="라이브" hasTabBar>
-      <div className="divide-y-2">
+      <div className="divide-y-[1px]">
         {[1, 1, 1, 1, 1].map((_, i) => (
           <div key={i} className="px-4 py-4 cursor-pointer">
             <div className="w-full rounded-md shadow-sm bg-slate-300 aspect-video" />

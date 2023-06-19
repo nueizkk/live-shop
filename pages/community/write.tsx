@@ -8,7 +8,7 @@ const Write: NextPage = () => {
     <Layout title="질문하기" canGoBack>
       <form className="p-4">
         <TextArea name="question" placeholder="Ask a question!" />
-        <Button text="Submit" />
+        <Button>Submit</Button>
       </form>
     </Layout>
   );

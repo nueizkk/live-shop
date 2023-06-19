@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../components/button";
+import Input from "@components/input";
 
 function cls(...classnames: string[]) {
   return classnames.join(" ");
@@ -39,38 +41,19 @@ export default function Enter() {
             </button>
           </div>
         </div>
-        <form className="flex flex-col mt-8">
-          <label className="text-sm font-medium text-gray-700" htmlFor="input">
-            {method === "email" ? "Email address" : null}
-            {method === "phone" ? "Phone number" : null}
-          </label>
+        <form className="flex flex-col mt-4 gap-y-6">
           <div className="mt-2">
             {method === "email" ? (
-              <input
-                id="input"
-                type="email"
-                className="w-full px-3 py-2 border-gray-300 rounded-md shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
-                required
-              />
+              <Input label="Email address" name="email" type="text" required />
             ) : null}
             {method === "phone" ? (
-              <div className="flex rounded-md shadow-sm">
-                <span className="flex items-center justify-center px-3 text-sm text-gray-500 border border-r-0 select-none rounded-l-md bg-gray-50">
-                  +82
-                </span>
-                <input
-                  id="input"
-                  className="w-full px-3 py-2 border-gray-300 rounded-md rounded-l-none shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
-                  type="number"
-                  required
-                />
-              </div>
+              <Input label="Phone number" type="phone" name="phone" required />
             ) : null}
           </div>
-          <button className="px-4 py-2 mt-6 text-sm font-medium text-white bg-gray-400 border-transparent rounded-md shadow-sm hover:bg-slate-900 focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-slate-900">
+          <Button>
             {method === "email" ? "Get login link" : null}
             {method === "phone" ? "Get one-time password" : null}
-          </button>
+          </Button>
         </form>
         <div className="mt-8">
           <div className="relative">

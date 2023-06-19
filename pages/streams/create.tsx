@@ -10,7 +10,7 @@ export default function Create() {
         <Input type="text" label="Name" name="name" required />
         <Input type="price" name="price" label="Price" />
         <TextArea label="Description" name="decription" />
-        <Button text="Go live" />
+        <Button>Go live</Button>
       </div>
     </Layout>
   );

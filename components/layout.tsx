@@ -15,10 +15,6 @@ export default function Layout({
 }: LayoutProps) {
   const { pathname, push, back } = useRouter();
 
-  // function movePage(pathName: string) {
-  //   push(pathName);
-  // }
-
   return (
     <div>
       <div className="px-4 sticky top-0 left-0 flex justify-between items-center w-full py-2.5 text-md font-medium bg-white border-b">

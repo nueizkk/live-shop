@@ -1,5 +1,5 @@
 interface TextAreaProps {
-  title?: string;
+  label?: string;
   name: string;
   [key: string]: any;
 }

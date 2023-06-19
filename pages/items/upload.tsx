@@ -30,7 +30,7 @@ const Upload: NextPage = () => {
         <Input label="Name" name="name" type="text" required />
         <Input label="Price" name="price" type="price" />
         <TextArea label="Description" name="description" />
-        <Button text="Upload product" />
+        <Button>Upload product</Button>
       </div>
     </Layout>
   );

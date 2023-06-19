@@ -25,7 +25,7 @@ export default function StreamDetail() {
         <h2 className="pb-3 text-2xl font-bold text-gray-900">Live Chat</h2>
         <div className="flex flex-col pb-10 gap-y-4 h-[50vh] overflow-y-scroll">
           {[1, 1, 1, 1, 1, 1].map((_, i) => (
-            <Message key={i} text=" " />
+            <Message key={i} text="dd" />
           ))}
         </div>
         <div className="fixed inset-x-0 w-full max-w-md px-4 mx-auto bottom-4">

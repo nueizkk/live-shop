@@ -4,17 +4,14 @@ interface MessageProps {
   text: string;
   reversed?: boolean;
   avatarUrl?: string;
-  key: number;
 }
 export default function Message({
   text,
   reversed = false,
   avatarUrl,
-  key,
 }: MessageProps) {
   return (
     <div
-      key={key}
       className={cls(
         "flex items-start gap-x-2",
         reversed ? "flex-row-reverse" : "flex-row"

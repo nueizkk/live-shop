@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function Home() {
   return (
     <Layout title="홈" hasTabBar>
-      <div className="flex flex-col divide-y-1px">
+      <div className="flex flex-col divide-y-[1px]">
         {[1, 1, 1, 1, 1].map((_, i) => (
           <Item key={i} />
         ))}

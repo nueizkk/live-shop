@@ -18,7 +18,7 @@ export default function TextArea({ label, name, ...rest }: TextAreaProps) {
         {...rest}
         id={name}
         rows={4}
-        className="w-full px-2 py-2 text-gray-900 border-gray-300 rounded-md shadow-sm resize-none focus:ring-orange-500 focus:border-orange-500"
+        className="w-full px-2 py-2 text-gray-900 border-gray-300 rounded-md shadow-sm resize-none focus:ring-slate-900 focus:border-slate-900"
       />
     </div>
   );

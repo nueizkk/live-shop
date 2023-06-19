@@ -9,7 +9,7 @@ export default function EditProfile() {
         <div className="flex items-center gap-x-3">
           <div className="rounded-full w-14 aspect-square bg-slate-300" />
           <label
-            className="px-3 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md shadow-sm cursor-pointer focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+            className="px-3 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md shadow-sm cursor-pointer focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
             htmlFor="picture"
           >
             Change

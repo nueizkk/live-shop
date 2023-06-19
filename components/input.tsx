@@ -18,7 +18,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
             {...rest}
             id={name}
             type="text"
-            className="w-full px-3 py-2 border-gray-300 rounded-md shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+            className="w-full px-3 py-2 border-gray-300 rounded-md shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
           />
         ) : null}
         {type === "price" ? (
@@ -31,7 +31,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
               id="price"
               type="text"
               placeholder="0.00"
-              className="w-full py-2 pr-12 border-gray-300 rounded-md shadow-sm appearance-none pl-7 placeholder:text-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+              className="w-full py-2 pr-12 border-gray-300 rounded-md shadow-sm appearance-none pl-7 placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
             />
             <div className="absolute text-sm text-gray-500 select-none right-3">
               <span>USD</span>
@@ -46,7 +46,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
             <input
               {...rest}
               id="phone"
-              className="w-full px-3 py-2 border-gray-300 rounded-md rounded-l-none shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-3 py-2 border-gray-300 rounded-md rounded-l-none shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
               type="number"
             />
           </div>

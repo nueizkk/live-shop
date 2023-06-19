@@ -9,7 +9,7 @@ const Upload: NextPage = () => {
     <Layout title="상품등록" canGoBack>
       <div className="p-4 space-y-5">
         <div>
-          <label className="flex items-center justify-center w-full h-48 py-6 text-gray-600 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:text-orange-400 hover:border-orange-400">
+          <label className="flex items-center justify-center w-full h-48 py-6 text-gray-600 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:text-slate-900 hover:border-slate-900">
             <svg
               className="w-12 h-12"
               stroke="currentColor"

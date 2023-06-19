@@ -14,7 +14,7 @@ export default function FloatingButton({
     <button
       type="button"
       onClick={() => push(path)}
-      className="fixed p-4 text-white transition-colors bg-orange-400 rounded-full shadow-xl bottom-24 right-5 hover:bg-orange-500"
+      className="absolute p-4 text-white transition-colors rounded-full shadow-xl bg-slate-900 bottom-24 right-5 hover:bg-slate-800 w-56px h-56px aspect-square"
     >
       {children}
     </button>

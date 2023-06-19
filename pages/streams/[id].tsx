@@ -32,12 +32,12 @@ export default function StreamDetail() {
           <div className="relative flex items-center">
             <input
               type="text"
-              className="w-full pr-12 text-sm text-gray-800 border-gray-300 rounded-full shadow-sm focus:ring-orange-500 focus:border-orange-500 focus:outline-none"
+              className="w-full pr-12 text-sm text-gray-800 border-gray-300 rounded-full shadow-sm focus:ring-slate-900 focus:border-slate-900 focus:outline-none"
             />
             <div className="absolute inset-y-0 flex py-1.5 pr-1.5 right-0">
               <button
                 type="button"
-                className="flex items-center px-3 text-sm text-white bg-orange-500 rounded-full cursor-pointer hover:bg-orange-600 focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className="flex items-center px-3 text-sm text-white rounded-full cursor-pointer bg-slate-900 hover:bg-slate-800 focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
               >
                 &rarr;
               </button>

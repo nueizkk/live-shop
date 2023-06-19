@@ -21,7 +21,7 @@ const CommunityPostDetail: NextPage = () => {
         </div>
         <div>
           <div className="px-4 mt-2 text-gray-700">
-            <span className="font-medium text-orange-500">Q.</span>
+            <span className="font-medium text-slate-900">Q. </span>
             What is the best mandu restaurant?
           </div>
           <div className="flex gap-x-5 mt-3 text-gray-700 py-2.5 border-t border-b-[2px] w-full px-4">
@@ -77,11 +77,11 @@ const CommunityPostDetail: NextPage = () => {
         </div>
         <div className="px-4">
           <textarea
-            className="w-full px-2 py-2 text-gray-900 border-gray-300 rounded-md shadow-sm resize-none focus:ring-orange-500 focus:border-orange-500"
+            className="w-full px-4 py-2 text-gray-900 border-gray-300 rounded-md shadow-sm resize-none placeholder:text-gray-400 focus:ring-slate-900 focus:border-slate-900"
             rows={4}
-            placeholder="Answer this question!"
+            placeholder="댓글을 달아주세요!"
           />
-          <button className="w-full px-4 py-2 mt-2 text-sm font-medium text-white bg-orange-500 border-transparent rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-orange-500">
+          <button className="w-full px-4 py-2 mt-2 text-sm font-medium text-white border-transparent rounded-md shadow-sm bg-slate-900 hover:bg-slate-800 focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-slate-900">
             Reply
           </button>
         </div>

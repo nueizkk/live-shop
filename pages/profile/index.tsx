@@ -25,7 +25,7 @@ const Profile: NextPage = () => {
             className="flex flex-col items-center cursor-pointer gap-y-2"
             onClick={() => push(`/profile/sold`)}
           >
-            <div className="items-center justify-center p-3 text-white bg-orange-500 rounded-full w-15 h-15">
+            <div className="items-center justify-center p-3 text-white rounded-full bg-slate-900 w-15 h-15">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -47,7 +47,7 @@ const Profile: NextPage = () => {
             className="flex flex-col items-center cursor-pointer gap-y-2"
             onClick={() => push(`/profile/bought`)}
           >
-            <div className="items-center justify-center p-3 text-white bg-orange-500 rounded-full w-15 h-15">
+            <div className="items-center justify-center p-3 text-white rounded-full bg-slate-900 w-15 h-15">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -69,7 +69,7 @@ const Profile: NextPage = () => {
             className="flex flex-col items-center cursor-pointer gap-y-2"
             onClick={() => push(`/profile/loved`)}
           >
-            <div className="items-center justify-center p-3 text-white bg-orange-500 rounded-full w-15 h-15">
+            <div className="items-center justify-center p-3 text-white rounded-full bg-slate-900 w-15 h-15">
               <svg
                 className="w-6 h-6"
                 fill="none"

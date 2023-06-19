@@ -6,7 +6,7 @@ const Chats: NextPage = () => {
     <Layout title="채팅" hasTabBar>
       <div className="divide-y-[1px]">
         {[1, 2, 3, 4, 5].map((_, i) => (
-          <div key={i} className="flex items-center px-4 py-3 gap-x-3">
+          <div key={i} className="flex items-center px-4 py-4 gap-x-3">
             <div className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-300" />
             <div>
               <p className="text-gray-700">Steve Jebs</p>

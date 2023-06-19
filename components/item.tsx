@@ -1,6 +1,12 @@
+import { useRouter } from "next/router";
+
 export default function Item() {
+  const { push } = useRouter();
   return (
-    <div className="flex justify-between p-4 cursor-pointer">
+    <div
+      className="flex justify-between p-4 cursor-pointer"
+      onClick={() => push("/items/123")}
+    >
       <div className="flex space-x-4">
         <div className="w-20 bg-gray-400 rounded-md aspect-square" />
         <div className="flex flex-col pt-2">

@@ -30,7 +30,7 @@ const ItemDetail: NextPage = () => {
               the first motherfucker to get shot. You understand?
             </p>
             <div className="flex items-center justify-between gap-x-2">
-              <button className="flex-1 py-3 font-medium text-white bg-orange-400 rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+              <button className="flex-1 py-3 font-medium text-white rounded-md bg-slate-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
                 Talk to seller
               </button>
               <button className="flex items-center p-3 text-gray-400 transition-colors justify-contents hover:text-gray-500 group">

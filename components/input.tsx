@@ -1,15 +1,17 @@
+import { HTMLInputTypeAttribute } from "react";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
 interface InputProps {
   label?: string;
-  name: string;
-  type: "text" | "price" | "phone";
+  kind: "text" | "price" | "phone";
+  type: HTMLInputTypeAttribute;
   register: UseFormRegisterReturn;
   [key: string]: any;
 }
 export default function Input({
   label,
   name,
+  kind,
   type,
   register,
   ...rest
@@ -22,34 +24,32 @@ export default function Input({
         </label>
       ) : null}
       <div className="mt-1">
-        {type === "text" ? (
+        {kind === "text" ? (
           <input
             {...register}
             {...rest}
-            id={name}
-            type="text"
+            type={type}
             className="h-[42px] w-full px-3 border-gray-300 rounded-md shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
           />
         ) : null}
-        {type === "price" ? (
+        {kind === "price" ? (
           <div className="relative flex items-center rounded-md">
             <div className="absolute text-sm text-gray-500 select-none left-3">
-              <span>$</span>
+              <span>₩</span>
             </div>
             <input
               {...register}
               {...rest}
-              id="price"
-              type="text"
-              placeholder="0.00"
+              type={type}
+              placeholder="0"
               className="h-[42px] w-full py-2 pr-12 border-gray-300 rounded-md shadow-sm appearance-none pl-7 placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
             />
             <div className="absolute text-sm text-gray-500 select-none right-3">
-              <span>USD</span>
+              <span>KRW</span>
             </div>
           </div>
         ) : null}
-        {type === "phone" ? (
+        {kind === "phone" ? (
           <div className="flex rounded-md shadow-sm">
             <span className="flex items-center justify-center px-3 text-sm text-gray-500 border border-r-0 select-none rounded-l-md bg-gray-50">
               +82
@@ -57,9 +57,8 @@ export default function Input({
             <input
               {...register}
               {...rest}
-              id="phone"
               className="h-[42px] w-full px-3  border-gray-300 rounded-md rounded-l-none shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"
-              type="number"
+              type={type}
             />
           </div>
         ) : null}

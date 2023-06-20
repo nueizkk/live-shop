@@ -1,11 +1,19 @@
 import Button from "@components/button";
 import Input from "@components/input";
 import Layout from "@components/layout";
+import { useForm } from "react-hook-form";
+
+interface editForm {
+  email: string;
+  phone: string;
+}
 
 export default function EditProfile() {
+  const { register, handleSubmit } = useForm<editForm>();
+  const onValid = (data: editForm) => {};
   return (
     <Layout title="프로필 수정하기" canGoBack>
-      <div className="p-4 space-y-4">
+      <form onSubmit={handleSubmit(onValid)} className="p-4 space-y-4">
         <div className="flex items-center gap-x-3">
           <div className="rounded-full w-14 aspect-square bg-slate-300" />
           <label
@@ -21,10 +29,22 @@ export default function EditProfile() {
             />
           </label>
         </div>
-        <Input type="text" label="Email address" name="email" />
-        <Input type="phone" label="Phone number" name="phone" required />
+        <Input
+          register={register("email")}
+          kind="text"
+          label="Email address"
+          name="email"
+          type="text"
+        />
+        <Input
+          register={register("phone")}
+          kind="phone"
+          label="Phone number"
+          name="phone"
+          type="tel"
+        />
         <Button>Update profile</Button>
-      </div>
+      </form>
     </Layout>
   );
 }

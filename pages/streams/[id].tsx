@@ -5,7 +5,7 @@ export default function StreamDetail() {
   return (
     <Layout title="라이브 시청하기" canGoBack>
       <div className="p-4 space-y-2">
-        <div>
+        <div className="pb-4">
           <div className="w-full rounded-md shadow-sm bg-slate-300 aspect-video" />
         </div>
         <div className="pb-3">

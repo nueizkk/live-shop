@@ -3,11 +3,23 @@ import Button from "@components/button";
 import Input from "@components/input";
 import Layout from "@components/layout";
 import TextArea from "@components/textarea";
+import { useForm } from "react-hook-form";
+
+interface uploadForm {
+  image: File;
+  name: string;
+  price: number;
+  description: string;
+}
 
 const Upload: NextPage = () => {
+  const { register, handleSubmit } = useForm<uploadForm>();
+  const onValid = (data: uploadForm) => {
+    console.log("hi");
+  };
   return (
     <Layout title="상품등록" canGoBack>
-      <div className="p-4 space-y-5">
+      <form onSubmit={handleSubmit(onValid)} className="p-4 space-y-5">
         <div>
           <label className="flex items-center justify-center w-full h-48 py-6 text-gray-600 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:text-slate-900 hover:border-slate-900">
             <svg
@@ -24,14 +36,28 @@ const Upload: NextPage = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <input className="hidden" type="file" />
+            <input {...register("image")} className="hidden" type="file" />
           </label>
         </div>
-        <Input label="Name" name="name" type="text" required />
-        <Input label="Price" name="price" type="price" />
-        <TextArea label="Description" name="description" />
+        <Input
+          register={register("name")}
+          label="Name"
+          kind="text"
+          type="text"
+        />
+        <Input
+          register={register("price")}
+          label="Price"
+          kind="price"
+          type="tel"
+        />
+        <TextArea
+          register={register("description")}
+          label="Description"
+          name="description"
+        />
         <Button>Upload product</Button>
-      </div>
+      </form>
     </Layout>
   );
 };

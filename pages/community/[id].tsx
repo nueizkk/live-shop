@@ -2,8 +2,17 @@ import type { NextPage } from "next";
 import Layout from "@components/layout";
 import Button from "@components/button";
 import TextArea from "@components/textarea";
+import { useForm } from "react-hook-form";
+
+interface ReplyForm {
+  reply: string;
+}
 
 const CommunityPostDetail: NextPage = () => {
+  const { register, handleSubmit } = useForm<ReplyForm>();
+  const onValid = (data: ReplyForm) => {
+    console.log(data);
+  };
   return (
     <Layout title="상세보기" canGoBack>
       <div>
@@ -77,10 +86,18 @@ const CommunityPostDetail: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="px-4 flex flex-col gap-y-2">
-          <TextArea name="reply" rows={4} placeholder="댓글을 달아주세요!" />
+        <form
+          onSubmit={handleSubmit(onValid)}
+          className="px-4 flex flex-col gap-y-2"
+        >
+          <TextArea
+            register={register("reply")}
+            name="reply"
+            rows={4}
+            placeholder="댓글을 달아주세요!"
+          />
           <Button>Reply</Button>
-        </div>
+        </form>
       </div>
     </Layout>
   );

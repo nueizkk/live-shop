@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Button from "@components/button";
 import Input from "@components/input";
-import { useForm } from "react-hook-form";
+import { FieldError, useForm } from "react-hook-form";
 import { cls } from "@libs/cls";
+import onlyNumber from "@libs/onlyNumber";
+import addHyphenToPhoneNumber from "@libs/addHyphenToPhoneNumber";
 
 interface EnterForm {
   email?: string;
@@ -10,7 +12,14 @@ interface EnterForm {
 }
 
 export default function Enter() {
-  const { register, watch, reset, handleSubmit } = useForm<EnterForm>();
+  const {
+    register,
+    watch,
+    reset,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<EnterForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onPhoneClick = () => {
     reset();
@@ -22,7 +31,7 @@ export default function Enter() {
   };
 
   const onValid = (data: EnterForm) => {
-    console.log(data);
+    // fetch("/api/users/enter", { method: "POST" });
   };
 
   return (
@@ -63,20 +72,30 @@ export default function Enter() {
           <div className="mt-2">
             {method === "email" ? (
               <Input
-                register={register("email")}
+                register={register("email", {
+                  required: "이메일 주소를 입력해주세요.",
+                })}
                 label="Email address"
-                name="email"
-                type="text"
+                kind="text"
+                type="email"
                 required
               />
             ) : null}
             {method === "phone" ? (
               <Input
-                register={register("phone")}
+                register={register("phone", {
+                  required: "핸드폰 번호를 입력해주세요.",
+                  maxLength: 13,
+                })}
                 label="Phone number"
-                type="phone"
-                name="phone"
+                kind="phone"
+                type="tel"
+                maxLength={13}
                 required
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const numberStr = onlyNumber(e);
+                  setValue("phone", addHyphenToPhoneNumber(numberStr));
+                }}
               />
             ) : null}
           </div>

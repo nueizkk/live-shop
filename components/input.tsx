@@ -1,10 +1,19 @@
+import type { UseFormRegisterReturn } from "react-hook-form";
+
 interface InputProps {
   label?: string;
   name: string;
   type: "text" | "price" | "phone";
+  register: UseFormRegisterReturn;
   [key: string]: any;
 }
-export default function Input({ label, name, type, ...rest }: InputProps) {
+export default function Input({
+  label,
+  name,
+  type,
+  register,
+  ...rest
+}: InputProps) {
   return (
     <div>
       {label ? (
@@ -15,6 +24,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
       <div className="mt-1">
         {type === "text" ? (
           <input
+            {...register}
             {...rest}
             id={name}
             type="text"
@@ -27,6 +37,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
               <span>$</span>
             </div>
             <input
+              {...register}
               {...rest}
               id="price"
               type="text"
@@ -44,6 +55,7 @@ export default function Input({ label, name, type, ...rest }: InputProps) {
               +82
             </span>
             <input
+              {...register}
               {...rest}
               id="phone"
               className="h-[42px] w-full px-3  border-gray-300 rounded-md rounded-l-none shadow-sm appearance-none placeholder:text-gray-400 focus:outline-none focus:ring-slate-900 focus:border-slate-900"

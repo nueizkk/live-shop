@@ -1,22 +1,37 @@
 import { useState } from "react";
 import Button from "@components/button";
 import Input from "@components/input";
+import { useForm } from "react-hook-form";
+import { cls } from "@libs/cls";
 
-function cls(...classnames: string[]) {
-  return classnames.join(" ");
+interface EnterForm {
+  email?: string;
+  phone?: string;
 }
 
 export default function Enter() {
+  const { register, watch, reset, handleSubmit } = useForm<EnterForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
-  const onEmailClick = () => setMethod("email");
-  const onPhoneClick = () => setMethod("phone");
+  const onPhoneClick = () => {
+    reset();
+    setMethod("phone");
+  };
+  const onEmailClick = () => {
+    reset();
+    setMethod("email");
+  };
+
+  const onValid = (data: EnterForm) => {
+    console.log(data);
+  };
+
   return (
     <div className="px-4 mt-16">
       <h3 className="text-3xl font-bold text-center">Enter to Live Shop</h3>
       <div className="mt-16">
         <div className="flex flex-col items-center">
           <h5 className="text-sm font-medium text-gray-500">Enter using:</h5>
-          <div className="grid w-full grid-cols-2  mt-8 border-b">
+          <div className="grid w-full grid-cols-2 mt-8 border-b">
             <button
               onClick={onEmailClick}
               className={cls(
@@ -41,13 +56,28 @@ export default function Enter() {
             </button>
           </div>
         </div>
-        <form className="flex flex-col mt-4 gap-y-6">
+        <form
+          onSubmit={handleSubmit(onValid)}
+          className="flex flex-col mt-4 gap-y-6"
+        >
           <div className="mt-2">
             {method === "email" ? (
-              <Input label="Email address" name="email" type="text" required />
+              <Input
+                register={register("email")}
+                label="Email address"
+                name="email"
+                type="text"
+                required
+              />
             ) : null}
             {method === "phone" ? (
-              <Input label="Phone number" type="phone" name="phone" required />
+              <Input
+                register={register("phone")}
+                label="Phone number"
+                type="phone"
+                name="phone"
+                required
+              />
             ) : null}
           </div>
           <Button>

@@ -2,9 +2,9 @@ import { ChangeEvent, useEffect, useState } from "react";
 import Button from "@components/button";
 import Input from "@components/input";
 import { FieldError, useForm } from "react-hook-form";
-import { cls } from "@libs/cls";
-import onlyNumber from "@libs/onlyNumber";
-import addHyphenToPhoneNumber from "@libs/addHyphenToPhoneNumber";
+import { cls } from "@libs/client/cls";
+import onlyNumber from "@libs/client/onlyNumber";
+import addHyphenToPhoneNumber from "@libs/client/addHyphenToPhoneNumber";
 
 interface EnterForm {
   email?: string;
@@ -30,8 +30,16 @@ export default function Enter() {
     setMethod("email");
   };
 
-  const onValid = (data: EnterForm) => {
-    // fetch("/api/users/enter", { method: "POST" });
+  const onValid = async (data: EnterForm) => {
+    try {
+      await fetch(`/api/${process.env.NEXT_PUBLIC_API_VERSION}/enter`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

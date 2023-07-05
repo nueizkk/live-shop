@@ -5,6 +5,7 @@ import { FieldError, useForm } from "react-hook-form";
 import { cls } from "@libs/client/cls";
 import onlyNumber from "@libs/client/onlyNumber";
 import addHyphenToPhoneNumber from "@libs/client/addHyphenToPhoneNumber";
+import useMutation from "@libs/client/useMuation";
 
 interface EnterForm {
   email?: string;
@@ -29,17 +30,14 @@ export default function Enter() {
     reset();
     setMethod("email");
   };
+  const [mutation, { loading, data }] = useMutation(
+    `/api/${process.env.NEXT_PUBLIC_API_VERSION}/enter`,
+    "POST"
+  );
+  console.log(data);
 
   const onValid = async (data: EnterForm) => {
-    try {
-      await fetch(`/api/${process.env.NEXT_PUBLIC_API_VERSION}/enter`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    mutation(data);
   };
 
   return (

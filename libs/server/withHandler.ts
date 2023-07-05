@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default function withHandler(
-  method: "GET" | "POST",
+  method: "GET" | "POST" | "DELETE",
   fn: (req: NextApiRequest, res: NextApiResponse) => void
 ) {
   return async (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +11,7 @@ export default function withHandler(
     try {
       await fn(req, res);
     } catch (error) {
-      return res.status(500).end();
+      return res.status(500).json({ error });
     }
   };
 }
